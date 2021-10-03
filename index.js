@@ -1,12 +1,12 @@
-
+//ДЗ
 function acc() {
-   for (let c of account) {
-      console.log(c);
+   for (let key of account) {
+      console.log(key);
    }
 };
 
 let bank = function () {
-   let m = { sum: 0 }
+   let m = { sum: 0, deposit: 0 }
    return {
       credit: function () {
          money = parseInt(prompt("Взять кредит на суму:"));
@@ -21,25 +21,34 @@ let bank = function () {
          money = parseInt(prompt("Снять с карточки:"));
          m.sum -= money;
       },
+      dep: function () {
+         initial = parseInt(prompt("денги:"));
+         interest = parseInt(prompt("проценти:")) / 100;
+         years = parseInt(prompt("Год:"));
+         d = Math.round(initial * (1 + interest * years));
+         m.deposit += d;
+         account.push(m);
+      },
       result: function () {
          console.log(m.sum)
       }
    }
 }();
-
+/*
 function bankDeposit() {
-   let mon = { deposit: 0 };
+   let mon = { deposit: 0, interest: 0 };
    let vklad = parseInt(prompt('Введите сумму вклада', ''));
    let v = vklad;
+   mon.deposit += v;
    let rost = 1 + parseInt(prompt('Введите годовой процент', '')) / 100;
-   for (let j = 0; j < 5; j++) {
+   for (let j = 0; j < 3; j++) {
       vklad = parseInt(vklad * rost);
-      mon.deposit += vklad;
+      mon.interest += vklad;
       account.push(mon);
-      console.log(v + ": " + vklad)
+      //console.log(v + ": " + vklad)
    }
 };
-
+*/
 let account = [""];
 let exit;
 let menu;
@@ -61,7 +70,8 @@ do {
          break;
       }
       case 4: {
-         bankDeposit();
+         bank.dep();
+         //bankDeposit();
          break;
       }
       case 5: {
@@ -91,6 +101,6 @@ do {
          break;
       }
    }
-} while (!exit)
+} while (!exit);
 
 
