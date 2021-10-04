@@ -34,26 +34,12 @@ let bank = function () {
       }
    }
 }();
-/*
-function bankDeposit() {
-   let mon = { deposit: 0, interest: 0 };
-   let vklad = parseInt(prompt('Введите сумму вклада', ''));
-   let v = vklad;
-   mon.deposit += v;
-   let rost = 1 + parseInt(prompt('Введите годовой процент', '')) / 100;
-   for (let j = 0; j < 3; j++) {
-      vklad = parseInt(vklad * rost);
-      mon.interest += vklad;
-      account.push(mon);
-      //console.log(v + ": " + vklad)
-   }
-};
-*/
+
 let account = [""];
 let exit;
 let menu;
 do {
-   menu = parseInt(prompt("1-Создать аккаунт; 2-Посмотреть аккаунт; 3-Взять кредит; 4-Положить депозит; 5-Сумма на карточен; 6-Пополнить карточку; 7-Снять с карточки; 8-Удалить аккаунт; 9-Выйти"));
+   menu = parseInt(prompt("1-Создать аккаунт; 2-Посмотреть аккаунт;\n 3-Взять кредит; 4-Положить депозит;\n 5-Сумма на карточен; 6-Пополнить карточку;\n 7-Снять с карточки; 8-Удалить аккаунт;\n 9-Выйти"));
    switch (menu) {
       case 1: {
          name = prompt("Имя");
@@ -71,7 +57,6 @@ do {
       }
       case 4: {
          bank.dep();
-         //bankDeposit();
          break;
       }
       case 5: {
