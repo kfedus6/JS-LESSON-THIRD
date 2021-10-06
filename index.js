@@ -228,3 +228,75 @@ const user = { name: "egor", age: get() };
 console.log(user);
 */
 
+//ДЗ
+
+let infoCar = (propPrice, propMotor, propYear) => {
+   return {
+      price: propPrice,
+      motor: propMotor,
+      year: propYear,
+   }
+}
+let car = infoCar(parseInt(prompt("цина автомобиля в євро:")), parseFloat(prompt("Об'єм двигуна в см3:")), parseInt(prompt("год автомобиля")));
+
+let pensionFund = (sumFund) => {
+   if (car.price <= 12500) {
+      sumFund = car.price * 0.03;
+      car["Пенсійний фонд"] = sumFund;
+   } else if (12500 >= car.price <= 22000) {
+      sumFund = car.price * 0.04;
+      car["Пенсійний фонд"] = sumFund;
+   } else if (car.price >= 22000) {
+      sumFund = car.price * 0.05
+      car["Пенсійний фонд"] = sumFund;
+   } else {
+      console.log("error");
+   }
+}
+
+let excise = (sumExcise) => {
+   if (car.motor <= 3.0) {
+      sumExcise = 50 * car.motor * (2021 - car.year);
+      car["Акциз"] = sumExcise;
+   } else if (car.motor >= 3.0) {
+      sumExcise = 100 * car.motor * (2021 - car.year);
+      car["Акциз"] = sumExcise;
+   } else {
+      console.log("error");
+   }
+}
+
+let toll = (sumToll) => {
+   sumToll = car.price * 0.1;
+   car["Мито"] = sumToll;
+}
+
+let tax = (sumTax) => {
+   sumTax = car.price + car["Акциз"] + car["Мито"];
+   sumTax *= 0.2;
+   car["ПДВ"] = sumTax;
+}
+
+let priceCar = (result) => {
+   result = car["Акциз"] + car["Мито"] + car["ПДВ"] + car["Пенсійний фонд"];
+   car["Сума розтаможки авто"] = result;
+}
+
+let priceTwo = (resultTwo) => {
+   resultTwo = car.price + car["Сума розтаможки авто"];
+   car["Ціна з розмитненням"] = resultTwo;
+}
+
+let listCar = () => {
+   for (let key in car) {
+      console.log(`${key}: ${car[key]}`);
+   }
+}
+pensionFund();
+excise();
+toll();
+tax();
+priceCar();
+priceTwo();
+listCar();
+console.log(car);
