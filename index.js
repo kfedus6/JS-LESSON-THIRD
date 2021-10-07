@@ -229,7 +229,7 @@ console.log(user);
 */
 
 //ДЗ
-
+/*
 let infoCar = (propPrice, propMotor, propYear) => {
    return {
       price: propPrice,
@@ -300,3 +300,121 @@ priceCar();
 priceTwo();
 listCar();
 console.log(car);
+
+
+console.log("1 - добавить авто")
+console.log("2 - посмотреть стоимость расстаможки")
+console.log("3 - выйти")
+let exit = false;
+while (!exit) {
+   let menu = parseInt(prompt("Enter: "))
+   switch (menu) {
+      case 1: {
+         console.log(1);
+         break;
+      }
+      case 2: {
+         console.log(2);
+         break;
+      }
+      case 3: {
+         console.log(3);
+         exit = true;
+         break;
+      }
+   }
+}
+
+*/
+
+/*
+let func = () => {
+   return false;
+}
+
+const user = { name: "egor", age: 12 };
+console.log(user);
+user.name = "kirill";
+user.age = 21;
+user.is_marry = func();
+
+console.log(user);
+*/
+
+
+//majority
+
+/*
+
+let num = parseInt(prompt())
+
+let is_majority = (num) => {
+   if (num < 18 && num > 0) {
+      return false;
+   } else if (num >= 18 && num > 0) {
+      return true;
+   }
+   else {
+      num = parseInt(prompt());
+      is_majority(num);
+   }
+
+}
+let user = { name: "kolya", };
+user.majority = is_majority(num);
+console.log(user);
+
+*/
+
+//is_majoryty(18) // true
+//is_majoryty(16) // false
+
+/*
+const userData = [["name", "Kirill"], ["age", 32], ["student", false], ["display", () => {
+   console.log("hello");
+}]];
+
+const user = Object.fromEntries(userData);
+console.log(user.display());
+*/
+
+/*
+let user = {
+   name: "egor",
+   age: 21
+}
+
+for (let key in user) {
+   console.log(key);
+}
+*/
+
+const country = {
+   name: "Ukraine",
+   language: "Украинский",
+   capital: {
+      name: "Киев",
+      population: 1000000,
+      year: 1200,
+   },
+   cities: [
+      { name: "Львов", population: 1200000 },
+      { name: "Днепр", population: 900000 },
+      { name: "Карпаты", population: 1100000 },
+   ]
+}
+
+
+console.log(country.capital.name);
+console.log(country.capital["population"]);
+console.log(country["cities"][1]["name"]);
+
+for (let key of country.cities) {
+   document.write(`<div>${key.name}:${key.population}</div>`);
+}
+
+/*
+for (let i = 0; i < country.cities.length; i++) {
+   console.log(country.cities[i].name);
+}
+*/
