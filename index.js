@@ -238,7 +238,8 @@ let infoCar = (propPrice, propMotor, propYear) => {
    }
 }
 let car = infoCar(parseInt(prompt("цина автомобиля в євро:")), parseFloat(prompt("Об'єм двигуна в см3:")), parseInt(prompt("год автомобиля")));
-
+*/
+/*
 let pensionFund = (sumFund) => {
    if (car.price <= 12500) {
       sumFund = car.price * 0.03;
@@ -292,16 +293,8 @@ let listCar = () => {
       console.log(`${key}: ${car[key]}`);
    }
 }
-pensionFund();
-excise();
-toll();
-tax();
-priceCar();
-priceTwo();
-listCar();
-console.log(car);
 
-
+let car = {};
 console.log("1 - добавить авто")
 console.log("2 - посмотреть стоимость расстаможки")
 console.log("3 - выйти")
@@ -310,10 +303,22 @@ while (!exit) {
    let menu = parseInt(prompt("Enter: "))
    switch (menu) {
       case 1: {
+         price = parseInt(prompt("цина автомобиля в євро:"));
+         motor = parseFloat(prompt("Об'єм двигуна в см3:"));
+         year = parseInt(prompt("год автомобиля"));
+         car = { price: price, motor: motor, year: year };
          console.log(1);
          break;
       }
       case 2: {
+         pensionFund();
+         excise();
+         toll();
+         tax();
+         priceCar();
+         priceTwo();
+         listCar();
+         console.log(car);
          console.log(2);
          break;
       }
@@ -324,9 +329,7 @@ while (!exit) {
       }
    }
 }
-
 */
-
 /*
 let func = () => {
    return false;
@@ -340,12 +343,8 @@ user.is_marry = func();
 
 console.log(user);
 */
-
-
-//majority
-
 /*
-
+//majority
 let num = parseInt(prompt())
 
 let is_majority = (num) => {
@@ -388,7 +387,7 @@ for (let key in user) {
    console.log(key);
 }
 */
-
+/*
 const country = {
    name: "Ukraine",
    language: "Украинский",
@@ -404,7 +403,6 @@ const country = {
    ]
 }
 
-
 console.log(country.capital.name);
 console.log(country.capital["population"]);
 console.log(country["cities"][1]["name"]);
@@ -412,9 +410,10 @@ console.log(country["cities"][1]["name"]);
 for (let key of country.cities) {
    document.write(`<div>${key.name}:${key.population}</div>`);
 }
-
+*/
 /*
 for (let i = 0; i < country.cities.length; i++) {
    console.log(country.cities[i].name);
 }
 */
+
